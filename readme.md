@@ -1,13 +1,10 @@
 ```mermaid
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->>John: Hello John, how are you?
-    loop Healthcheck
-        John->>John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts <br/>prevail!
-    John-->>Alice: Great!
-    John->>Bob: How about you?
-    Bob-->>John: Jolly good!
+flowchart TD
+    A[Start] --> B[User]
+    B --> C{Already a User}
+    C --> |Yes| D[Login]
+    C ----> |Go To| E[End]
+    D --> |No| E[Register User]
+    D ----> |Go To| E[End]
+    B ---->|No| E[End]
 ```
